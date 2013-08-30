@@ -9,4 +9,10 @@ name := "sperformance"
 
 version := "0.1"
 
-scalaVersion := "2.9.0-1"
+scalaVersion := "2.10.2"
+
+autoCompilerPlugins := true
+
+libraryDependencies in ThisBuild += compilerPlugin("test.org" %% "printplugin" % "1.0")
+
+scalacOptions in ThisBuild += "-P:printplugin:oversrc"
